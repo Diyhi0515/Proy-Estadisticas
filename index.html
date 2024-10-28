@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Análisis de Datos</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Análisis de Datos</h1>
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Sem</th>
+                    <th>Pub</th>
+                    <th>Vtas</th>
+                    <th>X²</th>
+                    <th>Y²</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td><input type="number" class="pub" placeholder="Pub"></td>
+                    <td><input type="number" class="vtas" placeholder="Vtas"></td>
+                    <td></td>
+                    <td></td>
+                    <td><button onclick="removeRow(this)">Eliminar</button></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td id="total-pub">0</td> 
+                    <td id="total-vtas">0</td> 
+                    <td id="total-pub2"></td>
+                    <td id="total-vtas2"></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+        </table>
+        <button onclick="addRow()">Agregar Fila</button>
+        <button onclick="calculate()">Calcular Coeficientes</button>
+        <button onclick="showStatistics()">Estadísticas Adicionales</button>
+        <button onclick="createScatterPlot()">Crear Gráfico de Dispersión</button>
+        <button onclick="resetData()">Reiniciar Datos</button>
+
+        <div id="results" style="display: flex; justify-content: space-between;">
+            <div id="result-data" style="flex: 1; margin-right: 20px;"></div>
+            <div id="interpretation" style="flex: 1;"></div>
+        </div>
+        
+        <div id="chart"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
