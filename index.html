@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="styles.css">
     <title>Análisis de Datos</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+
 </head>
 <body>
     <div class="container">
@@ -45,8 +48,13 @@
         <button onclick="addRow()">Agregar Fila</button>
         <button onclick="calculate()">Calcular Coeficientes</button>
         <button onclick="showStatistics()">Estadísticas Adicionales</button>
-        <button onclick="createScatterPlot()">Crear Gráfico de Dispersión</button>
+        <button onclick="exportToExcel()">Exportar Datos</button>
+        <button onclick="exportChart()">Exportar Grafico</button>
+        
+        <button onclick="predictSales()">Predecir Ventas</button>
+
         <button onclick="resetData()">Reiniciar Datos</button>
+        
 
         <div id="results" style="display: flex; justify-content: space-between;">
             <div id="result-data" style="flex: 1; margin-right: 20px;"></div>
